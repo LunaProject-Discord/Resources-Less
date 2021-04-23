@@ -1,0 +1,57 @@
+div.radio {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+
+  input[type=radio] {
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    position: absolute;
+    overflow: hidden;
+    white-space: nowrap;
+    border: 0;
+    clip: rect(0 0 0 0);
+    clippath: inset(50%);
+
+    & + label.radio-label::after {
+      visibility: hidden;
+    }
+
+    &:checked + label.radio-label::after {
+      visibility: visible;
+    }
+  }
+
+  label.radio-label {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    .select-deny;
+
+    &::before {
+      content: '';
+      width: 16px;
+      height: 16px;
+      margin: 0 0.2rem 0 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: solid 1px #0a84ff;
+      border-radius: 50%;
+      transition: visibility 1s ease-out;
+    }
+
+    &::after {
+      content: '';
+      width: 16px;
+      height: 16px;
+      position: absolute;
+      border-radius: 50%;
+      background-color: #0a84ff;
+      background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="-8 -8 16 16" width="16" height="16"><circle fill="white" r="4" /></svg>');
+    }
+  }
+}

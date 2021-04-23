@@ -1,0 +1,38 @@
+.input-group {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  border-radius: @borderRadius;
+
+  .form-control:not(:first-child) {
+    height: auto;
+    border-radius: 0 @borderRadius @borderRadius 0;
+  }
+
+  .form-control:not(:last-child) {
+    height: auto;
+    border-radius: @borderRadius 0 0 @borderRadius;
+  }
+
+  .input-group-prepend {
+    :not(:first-child) {
+      border-radius: 0;
+    }
+
+    :first-child {
+      border-radius: @borderRadius 0 0 @borderRadius;
+    }
+  }
+
+  .input-group-append {
+    :not(:last-child) {
+      border-radius: 0;
+    }
+
+    :last-child {
+      border-radius: 0 @borderRadius @borderRadius 0;
+    }
+  }
+}

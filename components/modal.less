@@ -1,0 +1,18 @@
+.modal-backdrop {
+  z-index: @dialogBackdropIndex;
+}
+
+.modal {
+  .modal-content {
+    border-radius: 3px;
+  }
+
+  button[type=button].close {
+    box-shadow: none;
+  }
+}
+
+.modal, [role=modal], .dialog, [role=dialog],
+.tox.tox-silver-sink.tox-tinymce-aux {
+  z-index: @dialogWindowIndex !important;
+}

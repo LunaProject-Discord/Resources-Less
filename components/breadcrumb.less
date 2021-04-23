@@ -1,0 +1,60 @@
+ul.breadcrumb {
+  height: 30px;
+  margin: 0;
+  padding: 0 10%;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  z-index: @breadcrumbIndex;
+  overflow-x: auto;
+  .select-deny;
+
+  li.breadcrumb-item {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+
+    a {
+      display: inherit;
+      align-items: inherit;
+      text-decoration: none;
+
+      &:hover .link-text {
+        text-decoration: underline;
+      }
+    }
+
+    &[data-icon]::before, [data-icon]::before, svg {
+      width: 22px;
+      margin-right: 3px;
+      font-size: 22px;
+      text-decoration: none;
+    }
+
+    &:last-child {
+      @media @xs {
+        padding-right: 10px;
+      }
+
+      @media @xl {
+        padding-right: 5%;
+      }
+
+      @media @xll {
+        padding-right: 10%;
+      }
+    }
+  }
+
+  @media @xs {
+    padding: 0 10px;
+  }
+
+  @media @xl {
+    padding: 0 5%;
+  }
+
+  @media @xll {
+    padding: 0 10%;
+  }
+}

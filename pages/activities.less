@@ -1,0 +1,167 @@
+div.activity-detail {
+  height: 100vh;
+  padding: 2rem 0 !important;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+
+  .page-title, .page-header, .section-header {
+    padding: 70px 2rem 5px;
+    border: none !important;
+    .select-deny;
+
+    @media @xs {
+      padding: 70px 1rem 5px;
+    }
+
+    @media @md {
+      padding: 70px 2rem 5px;
+    }
+  }
+
+  @media @xs {
+    padding: 1rem 0 !important;
+  }
+
+  @media @md {
+    padding: 2rem 0 !important;
+  }
+
+  div.message {
+    padding: .3rem 2rem;
+
+    @media @xs {
+      padding: .3rem 1rem;
+    }
+
+    @media @md {
+      padding: .3rem 2rem;
+    }
+
+    h5.author {
+      cursor: default;
+    }
+
+    &.status {
+      position: relative;
+      background: rgba(114, 137, 218, .05);
+
+      &::before {
+        content: "";
+        width: 2px;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        background-color: #7289da;
+        pointer-events: none;
+      }
+    }
+
+    &.reply {
+      padding-left: 5rem;
+
+      @media @xs {
+        padding-left: 4rem;
+      }
+
+      @media @md {
+        padding-left: 5rem;
+      }
+
+      div.media-body {
+        width: 100%;
+        font-size: 14px;
+
+        b {
+          margin-right: .2rem;
+          white-space: nowrap;
+        }
+
+        div {
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;
+        }
+      }
+    }
+
+    &.child {
+      position: relative;
+      padding: 0 2rem;
+
+      @media @xs {
+        padding: 0 1rem;
+      }
+
+      @media @md {
+        padding: 0 2rem;
+      }
+
+      &:hover {
+        &[data-time]::before {
+          content: attr(data-time);
+          position: absolute;
+          font-size: 14px;
+          .text-muted;
+        }
+      }
+    }
+
+    .attachment-wrapper {
+      width: fit-content;
+      height: fit-content;
+      display: block;
+
+      .attachment {
+        max-width: 400px;
+        width: 100%;
+        height: auto;
+        margin-top: .3rem;
+        display: block;
+      }
+    }
+  }
+
+  .hover:hover {
+    background: rgba(6, 6, 7, 0.02);
+  }
+
+  div.textarea {
+    height: 50px;
+    margin: 1rem 2rem 0;
+    padding: .5rem 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: #ebedef;
+    border-radius: 4px;
+    font-weight: bold;
+    .select-deny;
+
+    a.button {
+      width: auto;
+      margin: 0 0 0 auto;
+    }
+
+    @media @xs {
+      height: auto;
+      flex-direction: column;
+
+      a.button {
+        width: 100%;
+        margin: .3rem 0 0;
+      }
+    }
+
+    @media @md {
+      height: 50px;
+      flex-direction: row;
+
+      a.button {
+        width: auto;
+        margin: 0 0 0 auto;
+      }
+    }
+  }
+}

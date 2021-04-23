@@ -1,0 +1,431 @@
+section.section.first#particle {
+  height: calc(100vh - 152px);
+  // position: relative;
+  background: @THEME_COLOR;
+
+  div.grid {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: grid;
+
+    div.container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      h1, h4 {
+        font-family: "Hiragino Kaku Gothic ProN", "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "メイリオ", Meiryo, sans-serif;
+        font-weight: 700 !important;
+        letter-spacing: -.04em;
+        color: #fff;
+
+        animation-name: slide-in;
+        animation-duration: 1.6s;
+
+        @media @md {
+          line-height: 1.6;
+        }
+      }
+
+      h1 {
+        @media @xs {
+          display: none;
+        }
+
+        @media @md {
+          display: block;
+        }
+      }
+
+      &.image {
+        img {
+          border-radius: 50%;
+          opacity: 0;
+          pointer-events: none;
+          .select-deny;
+
+          animation-name: slide-in;
+          animation-duration: 1.6s;
+          animation-delay: 700ms;
+          animation-fill-mode: forwards;
+
+          @media @xs {
+            width: 128px;
+          }
+
+          @media @md {
+            width: 256px;
+          }
+        }
+      }
+
+      &.scroll {
+        position: relative;
+        .select-deny;
+
+        @media @xs {
+          display: none;
+          grid-row: ~"3 / 4";
+        }
+
+        @media @md {
+          display: flex;
+        }
+
+        @media @lg {
+          grid-row: ~"2 / 3";
+          grid-column: ~"1 / 3";
+        }
+      }
+
+      @keyframes slide-in {
+        0% {
+          opacity: 0;
+          transform: translateY(64px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    }
+
+    @media @xs {
+      grid-template-rows: 1fr 1fr 100px;
+      padding: 0 10px;
+    }
+
+    @media @lg {
+      grid-template-rows: 1fr 100px 50px;
+      grid-template-columns: 1.5fr 1fr;
+    }
+
+    @media @xl {
+      padding: 0 10%;
+    }
+  }
+
+  a {
+    padding-top: 60px;
+    color: #fff;
+  }
+
+  a span {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 24px;
+    height: 24px;
+    margin-left: -12px;
+    border-left: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    -webkit-animation: sdb 2s infinite;
+    animation: sdb 2s infinite;
+    box-sizing: border-box;
+  }
+
+  @-webkit-keyframes sdb {
+    0% {
+      -webkit-transform: rotate(-45deg) translate(0, 0);
+    }
+    20% {
+      -webkit-transform: rotate(-45deg) translate(-10px, 10px);
+    }
+    40% {
+      -webkit-transform: rotate(-45deg) translate(0, 0);
+    }
+  }
+
+  @keyframes sdb {
+    0% {
+      transform: rotate(-45deg) translate(0, 0);
+    }
+    20% {
+      transform: rotate(-45deg) translate(-10px, 10px);
+    }
+    40% {
+      transform: rotate(-45deg) translate(0, 0);
+    }
+  }
+}
+
+section.main {
+  div.main-features {
+    section {
+      padding-bottom: 5rem;
+      position: relative;
+
+      div.content {
+        min-height: 300px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        background: #f2f3f5;
+
+        div.image {
+          overflow: hidden;
+          text-align: center;
+
+          @media @xs {
+            height: 300px;
+          }
+
+          @media @md {
+            height: 400px;
+          }
+        }
+
+        div.main {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+
+          header {
+            display: flex;
+            align-items: center;
+
+            h3 {
+              margin: 0 0 0 .5rem;
+            }
+          }
+
+          p {
+            margin: .5rem 0 0;
+          }
+
+          @media @xs {
+            margin-top: 1rem;
+          }
+
+          @media @md {
+            margin: 0;
+            padding: 0 5%;
+          }
+
+          @media @xll {
+            padding: 0;
+          }
+        }
+
+        @media @xs {
+          padding: 10px;
+          flex-direction: column;
+
+          &.bottom {
+            flex-direction: column-reverse;
+          }
+        }
+
+        @media @md {
+          padding: 3% 5%;
+          &, &.bottom {
+            flex-direction: row;
+          }
+        }
+
+        @media @xl {
+          padding: 5% 10%;
+        }
+
+        @media @xll {
+          padding: 5% 10%;
+        }
+      }
+
+      div.wave {
+        color: #f2f3f5;
+      }
+
+      &.white {
+        div.content {
+          background: #fff;
+        }
+
+        div.wave {
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  div.page-wrapper {
+    margin-bottom: auto;
+
+    div.index {
+      display: flex;
+
+      section {
+        width: calc(100% / 3);
+        height: auto;
+        margin: 5px;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        background: #f5f5f5;
+
+        header {
+          width: 100%;
+          height: auto;
+          margin: 0;
+          padding: 10px;
+          display: flex;
+
+          h5 {
+            width: auto;
+            height: auto;
+            margin: 0;
+            margin-left: 5px;
+            padding: 0;
+            display: flex;
+            .select-deny;
+          }
+        }
+
+        div {
+          width: 100%;
+          height: auto;
+          margin: 0;
+          padding: 10px;
+          display: flex;
+          flex-direction: column;
+
+          div.image {
+            width: 100%;
+            height: 300px;
+            margin: 0;
+            padding: 10px;
+          }
+
+          div.main {
+            width: 100%;
+            height: auto;
+            margin: 0;
+            margin-top: 15px;
+            padding: 0;
+            display: block;
+          }
+        }
+
+        @media @xs {
+          width: auto;
+        }
+
+        @media @md {
+          width: calc(100% / 3);
+        }
+      }
+
+      @media @xs {
+        display: flex;
+        flex-direction: column;
+      }
+
+      @media @md {
+        display: flex;
+        flex-direction: row;
+      }
+    }
+
+    .grid {
+      width: 100%;
+      min-height: 400px;
+      margin: 0;
+      padding: 0;
+      display: grid;
+
+      div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        h3 {
+          margin: 0;
+          padding: 0;
+          border: none;
+        }
+
+        @media @xs {
+          grid-row: ~"1 / 2";
+        }
+
+        @media @lg {
+          grid-row: ~"1 / 2";
+          grid-column: ~"1 / 4";
+        }
+      }
+
+      section {
+        padding: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        div.icon {
+          margin: 0;
+          margin-bottom: 1rem;
+          .select-deny;
+
+          span {
+            font-size: 7rem;
+          }
+        }
+
+        div.content {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+
+          h4 {
+            margin-bottom: 1rem;
+          }
+        }
+      }
+
+      @media @xs {
+        padding: 0 5px;
+        grid-template-rows: 50px 1fr 1fr 1fr;
+        grid-template-columns: 1fr;
+      }
+
+      @media @lg {
+        grid-template-rows: 70px 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+
+      @media @xl {
+        padding: 5px;
+      }
+    }
+
+    @media @xs {
+      padding: 10px;
+    }
+
+    @media @xl {
+      padding: 10px 5%;
+    }
+
+    @media @xll {
+      padding: 10px 10%;
+    }
+  }
+}
+
+/* 画面外にいる状態 */
+.fadein {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s;
+}
+
+/* 画面内に入った状態 */
+.fadein.scrollin {
+  opacity: 1;
+  transform: translateY(0);
+}

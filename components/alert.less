@@ -1,0 +1,42 @@
+.alert, .alert-c {
+  position: relative;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 0 solid transparent;
+  box-shadow: 0 2px 4px 0 rgba(28, 30, 34, .4);
+  border-radius: @borderRadius;
+  .select-deny;
+
+  &.radius-0 {
+    border-radius: 0;
+  }
+
+  &.alert-c-warning {
+    color: #fff;
+    background: #ff9393;
+    border-color: #ff9393;
+  }
+
+  &.alert-c-dismissible {
+    padding-right: 3.90625rem;
+  }
+
+  &.alert-dismissible .close, &.alert-c-dismissible .close {
+    box-shadow: none;
+    height: 100%;
+  }
+}
+
+div.alert-container {
+  @media @xs {
+    padding: 10px;
+  }
+
+  @media @xl {
+    padding: 10px 5%;
+  }
+
+  @media @xll {
+    padding: 10px 10%;
+  }
+}

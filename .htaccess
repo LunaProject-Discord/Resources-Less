@@ -1,0 +1,19 @@
+SetEnvIf Referer "^http://lunaproject\.jp" OK
+SetEnvIf Referer "^http://.*\.lunaproject\.jp" OK
+SetEnvIf Referer "^https://lunaproject\.jp" OK
+SetEnvIf Referer "^https://.*\.lunaproject\.jp" OK
+
+<Files ~ "\.(html|php|css|js|json|jpe?g|png|svg|webp|gif|ico)$">
+    order deny,allow
+    deny from all
+    allow from env=OK
+</Files>
+
+<Files ~ "\.(css|js|json|jpe?g|png|svg|webp|gif|ico|otf|ttf|eot|woff)$">
+	Header set Cache-Control "max-age=31536000, public"
+</Files>
+
+<FilesMatch "\.(ttf|otf|eot|woff|woff2)$">
+    SetEnvIf Origin "^https?://(.+.)?lunaproject.jp$" origin_is=$0
+    Header set Access-Control-Allow-Origin %{origin_is}e env=origin_is
+</FilesMatch>

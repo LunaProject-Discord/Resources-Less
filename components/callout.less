@@ -1,0 +1,100 @@
+.callout {
+  padding: 20px;
+  margin: 20px 0;
+  border-left: solid 5px #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px 0 rgba(28, 30, 34, .4);
+
+
+  &.title-only h4, .title-only {
+    margin: 0;
+    padding: 0;
+  }
+
+  h4 {
+    margin-top: 0;
+    margin-bottom: 5px;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  code {
+    border-radius: 3px;
+  }
+
+  + .callout {
+    margin-top: -5px;
+  }
+
+
+  &.default {
+    border-left-color: #777;
+
+    h4 {
+      color: #777;
+    }
+  }
+
+  &.bland {
+    border-left-color: @THEME_COLOR;
+
+    h4 {
+      color: @THEME_COLOR;
+    }
+  }
+
+  &.primary {
+    // #428bca
+    border-left-color: @BS_PRIMARY;
+
+    h4 {
+      color: @BS_PRIMARY;
+    }
+  }
+
+  &.secondary {
+    border-left-color: @BS_SECONDARY;
+
+    h4 {
+      color: @BS_SECONDARY;
+    }
+  }
+
+  &.info {
+    // #5bc0de
+    border-left-color: @BS_INFO;
+
+    h4 {
+      color: @BS_INFO;
+    }
+  }
+
+  &.success {
+    // #5cb85c
+    border-left-color: @BS_SUCCESS;
+
+    h4 {
+      color: @BS_SUCCESS;
+    }
+  }
+
+  &.warning {
+    // #f0ad4e
+    border-left-color: @BS_WARNING;
+
+    h4 {
+      color: @BS_WARNING;
+    }
+  }
+
+  &.danger {
+    // #d9534f
+    border-left-color: @BS_DANGER;
+
+    h4 {
+      color: @BS_DANGER;
+    }
+  }
+}

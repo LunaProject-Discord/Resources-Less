@@ -1,0 +1,19 @@
+section.document {
+  margin-top: 1rem;
+
+  h3 {
+
+  }
+
+  h5.route {
+    font-family: Menlo, Consolas, Monaco, monospace;
+
+    &[data-method]::before {
+      content: attr(data-method);
+      margin-right: 10px;
+      color: #faa61a;
+      font-size: 20px;
+      text-transform: uppercase;
+    }
+  }
+}

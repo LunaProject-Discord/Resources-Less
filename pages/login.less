@@ -1,0 +1,68 @@
+main.page-container.login-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('/assets/img/login-background.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  div.login-dialog {
+    max-width: 350px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    opacity: 1;
+    transition: opacity 0.35s cubic-bezier(0.1, 0.9, 0.2, 1) 0s, transform 0.35s cubic-bezier(0.1, 0.9, 0.2, 1) 0s;
+    transform: translate3d(0px, 0px, 0px);
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    box-shadow: rgba(0, 0, 0, 0.2) 0 5px 5px -3px, rgba(0, 0, 0, 0.14) 0 8px 10px 1px, rgba(0, 0, 0, 0.12) 0 3px 14px 2px;
+    border-radius: 4px;
+
+    div.container {
+      height: 100%;
+      padding: 2rem 1rem 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      img.avatar {
+        width: auto;
+        margin: 0 0 3rem;
+      }
+
+      div.button-wrapper {
+        width: 100%;
+        margin-top: auto;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        :first-child {
+          margin-right: auto;
+        }
+
+        :last-child {
+          margin-left: auto;
+        }
+      }
+    }
+
+    div.progress-bar-container {
+      width: 100%;
+      height: 5px;
+      border-radius: 0 0 4px 4px;
+
+      div.progress-bar-percent {
+        width: 0;
+        height: 100%;
+        transition: width 5s linear;
+        background-color: @THEME_COLOR;
+        border-radius: inherit;
+      }
+    }
+  }
+}

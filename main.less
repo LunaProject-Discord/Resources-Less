@@ -1,0 +1,164 @@
+// 変数
+@DOMAIN: '//resource.lunaproject.jp';
+
+// ブレークポイント
+@xsSize: 0px;
+@smSize: 576px;
+@mdSize: 768px;
+@lgSize: 992px;
+@xlSize: 1200px;
+@xllSize: 1600px;
+
+// メディアクエリ
+@xs: ~"only screen and (min-width: @{xsSize})";
+@sm: ~"only screen and (min-width: @{smSize})";
+@md: ~"only screen and (min-width: @{mdSize})";
+@lg: ~"only screen and (min-width: @{lgSize})";
+@xl: ~"only screen and (min-width: @{xlSize})";
+@xll: ~"only screen and (min-width: @{xllSize})";
+
+// 色
+@primaryColor: #959ac0;
+@secondaryColor: #72767d;
+
+@borderRadius: 4px;
+
+// 優先度
+@tooltipIndex: 9900;
+@dialogWindowIndex: 9100;
+@dialogBackdropIndex: 9000;
+@globalHeaderIndex: 8600;
+@headerIndex: 8500;
+@drawerIndex: 8400;
+@drawerBackdropIndex: 8300;
+@sidebarIndex: 8200;
+@footerIndex: 8100;
+@breadcrumbIndex: 8000;
+@dropdownIndex: 20;
+@timelineIndex: 10;
+
+
+@import 'theme-color';
+@import 'colors';
+@import 'fonts';
+
+@import (inline) 'bootstrap.css';
+
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  .font-default;
+}
+
+::selection {
+  background: @SELECTION;
+  text-shadow: none;
+}
+
+.select-allow {
+  user-select: initial !important;
+  -webkit-user-select: initial !important;
+  -ms-user-select: initial !important;
+  -moz-user-select: initial !important;
+  -khtml-user-select: initial !important;
+  -webkit-user-drag: initial !important;
+  -khtml-user-drag: initial !important;
+}
+
+.select-deny {
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+}
+
+// グローバルで利用するスタイル
+@import 'components/alert';
+@import 'components/avatar';
+@import 'components/button';
+@import 'components/breadcrumb';
+@import 'components/callout';
+@import 'components/card';
+@import 'components/checkbox';
+@import 'components/collapse';
+@import 'components/divider';
+@import 'components/dropdown';
+@import 'components/embed';
+@import 'components/form';
+@import 'components/input-group';
+@import 'components/list';
+@import 'components/modal';
+@import 'components/pattern';
+@import 'components/popover';
+@import 'components/radio';
+@import 'components/table';
+@import 'components/text';
+@import 'components/textarea';
+@import 'components/timeline';
+@import 'components/tooltip';
+
+@import 'pages/activities';
+@import 'pages/dashboard';
+@import 'pages/docs';
+@import 'pages/embed';
+@import 'pages/verified';
+
+
+body:not(.dashboard) {
+  min-height: 100vh;
+  margin: 0;
+  padding: 152px 0 0;
+  display: flex;
+  flex-direction: column;
+
+  &.show-drawer {
+    overflow: hidden;
+  }
+
+  @import 'components/header';
+  @import 'components/page';
+  @import 'components/footer';
+
+  @import 'pages/commands';
+  @import 'pages/index';
+  @import 'pages/login';
+  @import 'pages/page';
+  @import 'pages/pricing';
+  @import 'pages/punish';
+  @import 'pages/status';
+}
+
+.nav-pills {
+  .nav-link {
+    display: flex;
+    align-items: center;
+    transition: 0.4s border;
+    border-radius: @borderRadius;
+    border: solid 1px transparent;
+
+    & > .icon {
+      margin-right: 0.1rem;
+    }
+
+    &.active, .show > .nav-link {
+      color: #fff !important;
+      background: @THEME_COLOR !important;
+      box-shadow: 0 2px 4px 0 rgba(12, 14, 18, .4);
+
+      &:hover {
+        border: solid 1px @THEME_COLOR;
+      }
+    }
+
+    &:hover {
+      border: solid 1px @THEME_COLOR;
+    }
+  }
+}
+
+.row {
+  margin: 0 -10px;
+}

@@ -1,0 +1,148 @@
+footer.footer {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  background: #222;
+  color: #fff;
+  .select-deny;
+
+  hr, .divider {
+    height: 0;
+    margin: 0.6rem 0;
+    overflow: hidden;
+    border-top: 1px solid #666;
+  }
+
+  div.grid {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+
+    div.item {
+      width: 100%;
+      margin: 0;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+
+      h5.header {
+        .font-brand;
+      }
+
+      a, span {
+        color: #ccc;
+
+        &.discord-logo {
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: contain;
+
+          @media @xs {
+            height: 100px;
+            background-image: url('@{DOMAIN}/icons/discord-logo.svg');
+          }
+
+          @media @md {
+            height: 100%;
+            background-image: url('@{DOMAIN}/icons/discord-icon.svg');
+          }
+        }
+      }
+    }
+
+    @media @xs {
+      display: flex;
+      flex-direction: column;
+    }
+
+    @media @lg {
+      display: grid;
+      grid-template-columns: 80px 1fr 1fr 1fr 1fr 1fr;
+    }
+  }
+
+  div.bottom-bar {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+
+    div {
+      h5 {
+        margin-bottom: 0.3rem;
+      }
+
+      span {
+        color: #aaa;
+      }
+
+      @media @xs {
+        margin-bottom: 10px;
+      }
+
+      @media @lg {
+        margin: 0;
+      }
+    }
+
+    a.invite-button {
+      width: 115px;
+      height: 48px;
+      padding: 10px 15px 10px 10px;
+      margin-left: auto;
+      background: @THEME_COLOR;
+      color: #fff;
+      box-shadow: 0 2px 4px 0 rgba(12, 14, 18, .4);
+
+      &:hover {
+        background: darken(@THEME_COLOR, 4.7%);
+        box-shadow: 0 2px 4px 0 rgba(12, 14, 18, .4);
+      }
+
+      @media @xs {
+        width: 100%;
+        margin: 0;
+      }
+
+      @media @lg {
+        width: auto;
+        margin: 0;
+        margin-left: auto;
+      }
+
+      @media @xl {
+        width: auto;
+        margin: 0;
+        margin-left: auto;
+      }
+    }
+
+    @media @xs {
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    @media @lg {
+      padding: 10px 0;
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
+  @media @xs {
+    padding: 10px;
+  }
+
+  @media @xl {
+    padding: 10px 5%;
+  }
+
+  @media @xll {
+    padding: 10px 10%;
+  }
+}
